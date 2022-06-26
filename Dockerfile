@@ -1,4 +1,4 @@
-FROM  python:3.8.5
+FROM  python:latest
 
 ARG PYTHON_MAIN_FILE
 
@@ -16,7 +16,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 5000
 
 # Run main.py when the container launches.
-ENTRYPOINT ["python", "main.py"]
+#ENTRYPOINT ["python", "main.py"]
 
-
+CMD ["python", "main.py"]
 
