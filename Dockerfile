@@ -2,13 +2,13 @@ FROM  python:latest
 
 ARG PYTHON_MAIN_FILE
 
-RUN mkdir /app
+#RUN mkdir /app
 
 WORKDIR /app
 
 COPY ./requirements.txt /app
 
-COPY ${PYTHON_MAIN_FILE} /app/main.py
+COPY ${PYTHON_MAIN_FILE} /app/server.py
 
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
@@ -18,5 +18,5 @@ EXPOSE 5000
 # Run main.py when the container launches.
 #ENTRYPOINT ["python", "main.py"]
 
-CMD ["python", "main.py"]
+CMD ["python", "./server.py"]
 
